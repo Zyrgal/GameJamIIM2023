@@ -20,6 +20,5 @@ public class EmployeeMovement : MonoBehaviour
             t += 0.006f;
             yield return new WaitForSeconds(0.01f);
         }
-        EmployeePosManager.instance.SpawnEmployee();
     }
 }
