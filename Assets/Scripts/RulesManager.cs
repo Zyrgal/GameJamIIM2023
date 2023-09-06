@@ -6,43 +6,14 @@ using TMPro;
 public class RulesManager : MonoBehaviour
 {
     public static RulesManager instance;
+    [SerializeField] int employeeNbrToSpawn;
+    [SerializeField] GameObject employeeToSpawn;
 
-    [SerializeField] private TextMeshProUGUI textBool;
-
-    [SerializeField] string word;
-    [SerializeField] string letterToSearch;
-    [SerializeField] string wordToSearch;
-
-    public void UI_ResetText()
+    private void Start()
     {
-        textBool.text = null;
-    }
-
-    public void UI_TestLetter()
-    {
-        textBool.text = SeachForALetter(word, letterToSearch).ToString();
-    }
-
-    public void UI_TestWord()
-    {
-        textBool.text = SeachForAWord(word, wordToSearch).ToString();
-    }
-
-    private bool SeachForALetter(string wordToSeachIn, string letterToSeach)
-    {
-        if (wordToSeachIn.Contains(letterToSeach))
+        for (int i = 0; i < employeeNbrToSpawn; i++)
         {
-            return true;
+            Instantiate(employeeToSpawn.transform, new Vector3((-8 + (i * 1.125f)), 0, 0), Quaternion.identity);
         }
-        return false;
-    }
-
-    private bool SeachForAWord(string wordToSeachIn, string wordToSeach)
-    {
-        if (wordToSeachIn.Contains(wordToSeach))
-        {
-            return true;
-        }
-        return false;
     }
 }
