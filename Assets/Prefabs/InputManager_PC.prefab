@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4980574651125561824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681999690563434292}
+  - component: {fileID: 6712686084439038545}
+  m_Layer: 0
+  m_Name: InputManager_PC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &681999690563434292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4980574651125561824}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 660.17206, y: 230.54999, z: -6.787182}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6712686084439038545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4980574651125561824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814974af4306d6c4d9a9e461c8c66577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mappings:
+  - symbol: 19
+    keyCode: 113
+  - symbol: 8
+    keyCode: 119
+  - symbol: 12
+    keyCode: 101
+  - symbol: 3
+    keyCode: 114
+  - symbol: 5
+    keyCode: 116
+  - symbol: 21
+    keyCode: 121
+  - symbol: 22
+    keyCode: 117
+  - symbol: 15
+    keyCode: 105
+  - symbol: 14
+    keyCode: 97
+  - symbol: 1
+    keyCode: 115
+  - symbol: 7
+    keyCode: 100
+  - symbol: 10
+    keyCode: 102
+  - symbol: 17
+    keyCode: 103
+  - symbol: 11
+    keyCode: 104
+  - symbol: 4
+    keyCode: 106
+  - symbol: 18
+    keyCode: 107
+  - symbol: 6
+    keyCode: 119
+  - symbol: 9
+    keyCode: 120
+  - symbol: 13
+    keyCode: 99
+  - symbol: 20
+    keyCode: 118
+  - symbol: 23
+    keyCode: 98
+  - symbol: 16
+    keyCode: 110
+  - symbol: 2
+    keyCode: 109
+  - symbol: 0
+    keyCode: 44
+  rulesScriptable: {fileID: 0}

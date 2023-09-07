@@ -375,13 +375,13 @@ MonoBehaviour:
   - CyberGen
   ClothList:
   - Costard
-  - T-shirt
-  - T-shirt
+  - T-shirt_b
+  - T-shirt_w
   - Chemise
   - Robe
   - Manteau
-  - "D\xE9bardeur"
-  - "D\xE9bardeur"
+  - "D\xE9bardeur_b"
+  - "D\xE9bardeur_w"
   AccessoryList:
   - Chapeau
   - Bijoux
