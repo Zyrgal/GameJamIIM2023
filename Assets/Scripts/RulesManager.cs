@@ -5,7 +5,7 @@ using TMPro;
 
 public class RulesManager : MonoBehaviour
 {
-    public static RulesManager instance;
+    /*public static RulesManager instance;
     [SerializeField] int employeeNbrToSpawn;
     [SerializeField] GameObject employeeToSpawn;
 
@@ -15,5 +15,5 @@ public class RulesManager : MonoBehaviour
         {
             Instantiate(employeeToSpawn.transform, new Vector3((-8 + (i * 1.125f)), 0, 0), Quaternion.identity);
         }
-    }
+    }*/
 }

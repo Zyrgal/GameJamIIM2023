@@ -11,7 +11,7 @@ public class TestingWord : MonoBehaviour
     [SerializeField] string letterToSearch;
     [SerializeField] string wordToSearch;
 
-    public List<int> alreadyIndexChoosen;
+    //public List<int> alreadyIndexChoosen;
 
     public void UI_ResetText()
     {
