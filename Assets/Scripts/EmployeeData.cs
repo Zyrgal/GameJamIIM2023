@@ -152,6 +152,10 @@ public class EmployeeData : MonoBehaviour
         {
             random = 2;
         }
+        else if (employeeCloth == "Débardeur_w" || employeeCloth == "T-shirt_w")
+        {
+            random = 0;
+        }
         everyHead[random].SetActive(true);
         if (random == 0 || random == 1)
         {
