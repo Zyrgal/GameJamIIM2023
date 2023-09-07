@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1921452647266784859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6147118594320583366}
+  - component: {fileID: 2789797779513942031}
+  m_Layer: 0
+  m_Name: DataList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6147118594320583366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921452647266784859}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.732444, y: 0.32382026, z: -0.09097273}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2789797779513942031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921452647266784859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3052fb7f143f5b74eb11a19638d8e482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LetterToSearchList:
+  - a
+  - b
+  - c
+  - d
+  - e
+  - f
+  - g
+  - h
+  - i
+  - j
+  - k
+  - l
+  - m
+  - n
+  - o
+  - p
+  - q
+  - r
+  - s
+  - t
+  - u
+  - v
+  - w
+  - x
+  - y
+  - z
+  WordToSearchList:
+  - "caf\xE9"
+  - word2
+  - word3
+  FirstNameList:
+  - Michel
+  - Paul
+  - Dacques
+  LastNameList:
+  - Durand
+  - dupont
+  - truc
+  DescriptionsList:
+  - j'aime le chocolat
+  - j'aime le cafe
+  - j'aime le pomme
+  EntrepriseNameList:
+  - EntrepriseA
+  - EntrepriseB
+  - EntrepriseC
+  ClothList:
+  - Chapeau
+  - cravatte
+  - chaussure
+  AccessoryList:
+  - collier
+  - boucle
+  - piercing
+  savedLetterToSearchList:
+  - a
+  savedWordToSearchList:
+  - word
+  savedFirstNameList:
+  - Michel
+  savedLastNameList:
+  - Durand
+  savedDescriptionsList:
+  - j'aime le chocolat
+  savedEntrepriseNameList:
+  - EntrepriseA
+  - EntrepriseB
+  - EntrepriseC
+  savedClothList:
+  - Chapeau
+  savedAccessoryList:
+  - Collier
