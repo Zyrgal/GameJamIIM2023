@@ -41,6 +41,7 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance { get; private set; }
 
+    [SerializeField] public List<Sprite> pictoSprites = new List<Sprite>();
     [SerializeField] private InputMapping[] _mappings;
     private List<InputSymbol> _symbolsTyped = new List<InputSymbol>();
     public RulesScriptable rulesScriptable;
