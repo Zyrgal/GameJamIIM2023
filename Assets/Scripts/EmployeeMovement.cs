@@ -16,7 +16,7 @@ public class EmployeeMovement : MonoBehaviour
         float t = 0;
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
-            transform.position = Vector3.Lerp(pos, EmployeePosManager.instance.gameObject.transform.position, t);
+            transform.position = Vector3.Lerp(pos, targetPos, t);
             t += 0.006f;
             yield return new WaitForSeconds(0.01f);
         }
