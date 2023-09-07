@@ -63,13 +63,13 @@ public class EmployeePosManager : MonoBehaviour
         {
             if (i == 0)
             {
-                employeeList[i].gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                employeeList[i].gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "ActiveEmployee";
+                employeeList[i].gameObject.transform.Find("Body").GetComponent<SpriteRenderer>().color = Color.white;
+                employeeList[i].gameObject.transform.position.Set(employeeList[i].gameObject.transform.position.x, employeeList[i].gameObject.transform.position.y, 0);
             }
             else
             {
-                employeeList[i].gameObject.GetComponent<SpriteRenderer>().color = Color.black;
-                employeeList[i].gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "InactiveEmployee";
+                employeeList[i].gameObject.transform.Find("Body").GetComponent<SpriteRenderer>().color = Color.black;
+                employeeList[i].gameObject.transform.position.Set(employeeList[i].gameObject.transform.position.x, employeeList[i].gameObject.transform.position.y, 1);
             }
         }
     }   
