@@ -2,15 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EnumRule
+{
+    letter = 0,
+    word,
+    entrepriseName,
+    employeeCloth,
+    employeeAccessory
+}
+
 public enum LetterToSeach
 {
-    a,b,c,d,e,f,g,h
+    a, b
 }
 public enum WordToSeach
 {
-    economie,juridique
+    economie, juridique, batiment, controleur
 }
-public enum EmployeeFirstname
+
+/*public enum EmployeeFirstname
 {
     Harry,
     Paul
@@ -19,35 +29,45 @@ public enum EmployeeLastname
 {
     Potter,
     Fontaine
-}
+}*/
 public enum EntrepriseName
 {
     EntrepriseA,
-    EntrepriseB
+    EntrepriseB,
+    EntrepriseC,
+    EntrepriseD
 }
 public enum EmployeeClothing
 {
     Cravate,
-    Costard
+    Costard,
+    Chapeau,
+    TeeShirt
 }
 public enum EmployeeAccesory
 {
     Collier,
-    Lunette
+    Lunette,
+    Bague,
+    Piercing
 }
 
 public class EmployeeData : MonoBehaviour
 {
     [Header("Combinaisons")]
-    [SerializeField] List<int> combinaison1;
-    [SerializeField] List<int> combinaison2;
-    [SerializeField] List<int> combinaison3;
+    public List<List<int>> allCombinaisons;
+    public List<int> combinaison1;
+    public List<int> combinaison2;
+    public List<int> combinaison3;
+
+    public List<string> FirstName;
+    public List<string> LastName;
 
     public EntrepriseName entrepriseName;
     public EmployeeClothing employeeClothing;
     public EmployeeAccesory employeeAccesory;
-    public EmployeeLastname employeeLastname;
-    public EmployeeFirstname employeeFirstname;
+    public string employeeLastname;
+    public string employeeFirstname;
 
     private void Start()
     {
@@ -56,10 +76,15 @@ public class EmployeeData : MonoBehaviour
 
     private void SetEmployee()
     {
-        employeeFirstname = (EmployeeFirstname)Random.Range(0, System.Enum.GetValues(typeof(EmployeeFirstname)).Length);
-        employeeLastname = (EmployeeLastname)Random.Range(0, System.Enum.GetValues(typeof(EmployeeLastname)).Length);
-        entrepriseName = (EntrepriseName)Random.Range(0, System.Enum.GetValues(typeof(EntrepriseName)).Length);
-        employeeClothing = (EmployeeClothing)Random.Range(0, System.Enum.GetValues(typeof(EmployeeClothing)).Length);
-        employeeAccesory = (EmployeeAccesory)Random.Range(0, System.Enum.GetValues(typeof(EmployeeAccesory)).Length);
+        //employeeFirstname = (EmployeeFirstname)Random.Range(0, System.Enum.GetValues(typeof(EmployeeFirstname)).Length);
+        /*employeeFirstname = TestingWord.GetRandomEnum<EmployeeFirstname>();
+        employeeLastname = TestingWord.GetRandomEnum<EmployeeLastname>();*/
+        entrepriseName = TestingWord.GetRandomEnum<EntrepriseName>();
+        employeeClothing = TestingWord.GetRandomEnum<EmployeeClothing>();
+        employeeAccesory = TestingWord.GetRandomEnum<EmployeeAccesory>();
     }
+
+    public void TestIf
+
+    
 }

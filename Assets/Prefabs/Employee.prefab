@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7592519358596743191}
   - component: {fileID: 6888613147412553548}
   - component: {fileID: 3668483546726247267}
+  - component: {fileID: 2551639184354467968}
   m_Layer: 0
   m_Name: Employee
   m_TagString: Untagged
@@ -97,6 +98,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651f67e4167ac0641b0d57c234f9c3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  employeeFirstname: 0
-  employeeLastname: 0
+--- !u!114 &2551639184354467968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8769112723986162978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ae9ad7962afd04794119d211e013ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combinaison1: 
+  combinaison2: 
+  combinaison3: 
+  FirstName:
+  - Machin
+  - kik
+  LastName:
+  - Truc
+  - lol
   entrepriseName: 0
+  employeeClothing: 0
+  employeeAccesory: 0
+  employeeLastname: 0
+  employeeFirstname: 0
