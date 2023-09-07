@@ -78,7 +78,7 @@ public class RulesScriptable : MonoBehaviour
         bool isValid = false;
 
 
-        employeeName = DataList.instance.FirstNameList[UnityEngine.Random.Range(0, DataList.instance.FirstNameList.Count)];
+        employeeName = DataList.instance.savedFirstNameList[UnityEngine.Random.Range(0, DataList.instance.savedFirstNameList.Count)];
 
         while (!isValid)
         {
@@ -88,7 +88,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else
             {
-                employeeName = DataList.instance.FirstNameList[UnityEngine.Random.Range(0, DataList.instance.FirstNameList.Count)];
+                employeeName = DataList.instance.savedFirstNameList[UnityEngine.Random.Range(0, DataList.instance.savedFirstNameList.Count)];
             }
         }
     }
@@ -97,7 +97,7 @@ public class RulesScriptable : MonoBehaviour
     {
         bool isValid = false;
 
-        employee.employeeDescription = DataList.instance.DescriptionsList[UnityEngine.Random.Range(0, DataList.instance.DescriptionsList.Count)];
+        employee.employeeDescription = DataList.instance.savedDescriptionsList[UnityEngine.Random.Range(0, DataList.instance.savedDescriptionsList.Count)];
 
         while (!isValid)
         {
@@ -107,7 +107,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else
             {
-                employee.employeeDescription = DataList.instance.DescriptionsList[UnityEngine.Random.Range(0, DataList.instance.DescriptionsList.Count)];
+                employee.employeeDescription = DataList.instance.savedDescriptionsList[UnityEngine.Random.Range(0, DataList.instance.savedDescriptionsList.Count)];
             }
         }
     }
@@ -135,7 +135,7 @@ public class RulesScriptable : MonoBehaviour
     {
         bool isValid = false;
         
-        employee.employeeCloth = DataList.instance.ClothList[UnityEngine.Random.Range(0, DataList.instance.ClothList.Count)];
+        employee.employeeCloth = DataList.instance.savedClothList[UnityEngine.Random.Range(0, DataList.instance.savedClothList.Count)];
 
         while (!isValid)
         {
@@ -145,7 +145,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else
             {
-                employee.employeeCloth = DataList.instance.ClothList[UnityEngine.Random.Range(0, DataList.instance.ClothList.Count)];
+                employee.employeeCloth = DataList.instance.savedClothList[UnityEngine.Random.Range(0, DataList.instance.savedClothList.Count)];
             }
         }
     }
@@ -154,7 +154,7 @@ public class RulesScriptable : MonoBehaviour
     {
         bool isValid = false;
         
-        employee.employeeAccessory = DataList.instance.AccessoryList[UnityEngine.Random.Range(0, DataList.instance.AccessoryList.Count)];
+        employee.employeeAccessory = DataList.instance.savedAccessoryList[UnityEngine.Random.Range(0, DataList.instance.savedAccessoryList.Count)];
 
         while (!isValid)
         {
@@ -164,7 +164,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else
             {
-                employee.employeeAccessory = DataList.instance.AccessoryList[UnityEngine.Random.Range(0, DataList.instance.AccessoryList.Count)];
+                employee.employeeAccessory = DataList.instance.savedAccessoryList[UnityEngine.Random.Range(0, DataList.instance.savedAccessoryList.Count)];
             }
         }
     }
@@ -310,37 +310,6 @@ public class RulesScriptable : MonoBehaviour
         return false;
     }
 
-    /*public void CheckChoosenDoor(List<InputSymbol> playerInput, EmployeeData employee)
-    {
-        bool isValid = false;
-        bool foundDoor = false;
-
-        for (int i = 0; i < porteList.Count; i++)
-        {
-            if (playerInput.Equals(employee.allCombinaisons[i]))
-            {
-                isValid = dailyRules[(int)porteList[i].enumRule].validFunction(porteList[i].rule, employee);
-                foundDoor = true;
-                break;
-            }
-        }
-
-        if (!foundDoor)
-        {
-            isValid = false; //Le joueur à tapé un mauvais mdp
-        }
-
-        if (isValid)
-        {
-            Debug.Log("Bonne porte");
-            //La porte bonne porte
-        }
-        else
-        {
-            Debug.Log("Mauvaise porte");
-            //La mauvaise
-        }
-    }*/
     public void CheckChoosenDoor(List<InputSymbol> playerInput)
     {
         EmployeeData employee = employeeList[0].GetComponent<EmployeeData>();
@@ -379,10 +348,5 @@ public class RulesScriptable : MonoBehaviour
             Debug.Log("Mauvaise porte");
             //La mauvaise
         }
-    }
-
-    public void CompareList()
-    {
-
     }
 }

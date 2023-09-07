@@ -60,18 +60,6 @@ public class EmployeeData : MonoBehaviour
     public List<InputSymbol> combinaison2 = new List<InputSymbol>();
     public List<InputSymbol> combinaison3 = new List<InputSymbol>();
 
-    /*public List<string> LetterToSearchList;
-    public List<string> WordToSearchList;
-    public List<string> FirstNameList;
-    public List<string> LastNameList;
-    public List<string> DescriptionsList;
-    public List<string> EntrepriseNameList;
-    public List<string> ClothList;
-    public List<string> AccessoryList;*/
-
-    /*public EntrepriseName entrepriseName;
-    public EmployeeClothing employeeClothing;
-    public EmployeeAccesory employeeAccesory;*/
     public string employeeLastname;
     public string employeeFirstname;
     public string employeeDescription;
@@ -91,11 +79,6 @@ public class EmployeeData : MonoBehaviour
 
     private void SetEmployee()
     {
-        //employeeFirstname = (EmployeeFirstname)Random.Range(0, System.Enum.GetValues(typeof(EmployeeFirstname)).Length);
-        /*employeeFirstname = TestingWord.GetRandomEnum<EmployeeFirstname>();
-        employeeLastname = TestingWord.GetRandomEnum<EmployeeLastname>();*/
-        /*entrepriseName = TestingWord.GetRandomEnum<EntrepriseName>();
-        employeeClothing = TestingWord.GetRandomEnum<EmployeeClothing>();
-        employeeAccesory = TestingWord.GetRandomEnum<EmployeeAccesory>();*/
+
     }
 }

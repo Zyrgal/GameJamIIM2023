@@ -6,6 +6,7 @@ using UnityEngine;
 public delegate void InitDelegate(Rule rule);
 public delegate void InitEmployeeDelegate(Rule rule, EmployeeData employeeData);
 public delegate bool ValidateDelegate(Rule rule, EmployeeData employeeData);
+//public delegate void TestDelegate();
 public class RuleFunc
 {
     public EnumRule enumRules;
@@ -20,6 +21,7 @@ public class RuleFunc
         this.validFunction = validFunction;
         this.initEmployee = initEmployee;
     }
+    //public TestDelegate testBadRules;
 }
 
 [Serializable]
