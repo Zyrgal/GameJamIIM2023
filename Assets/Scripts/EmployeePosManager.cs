@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using UnityEditor;
 using UnityEngine;
 
 public class EmployeePosManager : MonoBehaviour
@@ -10,8 +11,9 @@ public class EmployeePosManager : MonoBehaviour
     [SerializeField] private int nbOfEmployeePos;
     [SerializeField] private float offsetFromLastPos;
     [SerializeField] private GameObject employeePosPrefab;
+    SerializedProperty m_OrderInLayer;
 
-    private List<Vector3> employeePosList = new List<Vector3>();
+    [SerializeField] private List<Transform> employeePosList = new List<Transform>();
     private List<EmployeeMovement> employeeList = new List<EmployeeMovement>();
     private Vector3 offset;
     private int employeePosIndex = 0;
@@ -21,20 +23,19 @@ public class EmployeePosManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        offset = new Vector3(1, 0, 0);
-
-
-       
-    }
-
     public void SpawnEmployee()
     {
-        EmployeeMovement employee = Instantiate(employeePosPrefab, new Vector3(5, 0), Quaternion.identity).GetComponent<EmployeeMovement>();
+        EmployeeMovement employee = Instantiate(employeePosPrefab, new Vector3(employeePosList[employeePosList.Count-1].position.x, transform.position.y), Quaternion.identity).GetComponent<EmployeeMovement>();
         employeeList.Add(employee);
-        employee.MoveTo(employeePosList[employeePosIndex]);
-        employeePosIndex++;
+        UpdateEmployeesColor();
+
+        if (employeePosIndex > employeePosList.Count-1)
+            return;
+        else
+        {
+            employee.MoveTo(employeePosList[employeePosIndex].position);
+            employeePosIndex++;
+        }
     }
 
     public void RemoveEmployee()
@@ -42,10 +43,34 @@ public class EmployeePosManager : MonoBehaviour
         Destroy(employeeList[0].gameObject);
         employeeList.Remove(employeeList[0]);
         employeePosIndex--;
+        UpdateEmployeesColor();
 
-        for (int i = 0; i < employeeList.Count; i++)
+        for (int i = 0; i <= employeeList.Count; i++)
         {
-            employeeList[i].MoveTo(employeePosList[i]);
+            StartCoroutine(MoveEmployeeCoroutine(i));
         }
     }
+
+    private IEnumerator MoveEmployeeCoroutine(int index)
+    {
+        yield return new WaitForSeconds(0.7f);
+        employeeList[index].MoveTo(employeePosList[index].position);
+    }
+
+    private void UpdateEmployeesColor()
+    {
+        for (int i = 0; i < employeeList.Count; i++)
+        {
+            if (i == 0)
+            {
+                employeeList[i].gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                employeeList[i].gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "ActiveEmployee";
+            }
+            else
+            {
+                employeeList[i].gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+                employeeList[i].gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "InactiveEmployee";
+            }
+        }
+    }   
 }
