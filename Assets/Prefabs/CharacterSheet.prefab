@@ -1425,6 +1425,7 @@ GameObject:
   - component: {fileID: 8608035977982119329}
   - component: {fileID: 5238901668585595545}
   - component: {fileID: 5875954688839884605}
+  - component: {fileID: 3236685948976925631}
   m_Layer: 5
   m_Name: CharacterSheet
   m_TagString: Untagged
@@ -1495,6 +1496,42 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3236685948976925631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754424780267088289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e604b1a41110d41b67cfaf4f897dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employeeName: {fileID: 5291459564941519491}
+  entreprise: {fileID: 2102186177289634123}
+  info: {fileID: 1856708019199247948}
+  symbolCombo1:
+  - {fileID: 4933584068360223328}
+  - {fileID: 6743950903152219845}
+  - {fileID: 5264960443757808292}
+  - {fileID: 2583709054656671240}
+  - {fileID: 573183226197426741}
+  - {fileID: 6242091886617388337}
+  symbolCombo2:
+  - {fileID: 5919708244492581034}
+  - {fileID: 4461398507012376247}
+  - {fileID: 7589020897222763198}
+  - {fileID: 7088270811380611025}
+  - {fileID: 1751238216490635752}
+  - {fileID: 4184295380205129058}
+  symbolCombo3:
+  - {fileID: 2454656090281334149}
+  - {fileID: 165244589500530410}
+  - {fileID: 2371122937818548049}
+  - {fileID: 5322941215146121474}
+  - {fileID: 8985676597643543890}
+  - {fileID: 8685424969486212832}
 --- !u!1 &6417736903174237810
 GameObject:
   m_ObjectHideFlags: 0

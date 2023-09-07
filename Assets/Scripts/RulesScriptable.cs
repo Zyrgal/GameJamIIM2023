@@ -16,6 +16,8 @@ public struct RuleDoor
 
 public class RulesScriptable : MonoBehaviour
 {
+    [SerializeField] public GameObject sheetPrefab;
+
     public static RuleFunc[] dailyRules = new RuleFunc[5] 
     { 
         new RuleFunc(EnumRule.letter,InitLetterRule,ValidateLetterRule,InitEmployeLetter),
@@ -67,6 +69,8 @@ public class RulesScriptable : MonoBehaviour
         {
             GameObject instantiateEmployee = Instantiate(employeeToSpawn.transform, new Vector3((-8 + (i * 1.125f)), 0, 0), Quaternion.identity).gameObject;
             employeeList.Add(instantiateEmployee);
+            GameObject instantiateSheet = Instantiate(sheetPrefab, new Vector3((-8 + (i * 1.125f)), 0, 0), Quaternion.identity);
+            instantiateEmployee.GetComponent<EmployeeData>().sheetData = instantiateSheet.GetComponent<SheetData>();
             int random = UnityEngine.Random.Range(0, rulesList.Count);
             dailyRules[(int)rulesList[random].enumRule].initEmployee(rulesList[random].rule, instantiateEmployee.GetComponent<EmployeeData>());
         }

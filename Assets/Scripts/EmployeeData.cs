@@ -71,6 +71,8 @@ public class EmployeeData : MonoBehaviour
     [SerializeField] List<GameObject> everyWearedObject;
     [SerializeField] List<GameObject> everyHead;
 
+    [SerializeField] public SheetData sheetData;
+
     int combinaisonCount = 6;
 
     private void Start()
@@ -84,6 +86,7 @@ public class EmployeeData : MonoBehaviour
         allCombinaisons.Add(combinaison3);
         SetEmployee();
         SetEmployeeVisual();
+        SetSheetData();
     }
 
     public void RandomiseCombinaison(List<InputSymbol> combinaisonToRandomise)
@@ -143,5 +146,31 @@ public class EmployeeData : MonoBehaviour
         }
 
         everyHead[Random.Range(0, everyHead.Count)].SetActive(true);
+    }
+
+    public void SetSheetData()
+    {
+        sheetData.employeeName.text = employeeFirstname + " " + employeeLastname;
+        sheetData.entreprise.text = employeeEntreprise;
+        sheetData.info.text = employeeDescription;
+
+        for (int i = 0; i < sheetData.symbolCombo1.Count; i++)
+        {
+            sheetData.symbolCombo1[i].GetComponent<Image>().sprite = GetSprite(combinaison1[i]);
+            sheetData.symbolCombo2[i].GetComponent<Image>().sprite = GetSprite(combinaison2[i]);
+            sheetData.symbolCombo3[i].GetComponent<Image>().sprite = GetSprite(combinaison3[i]);
+        }
+    }
+
+    private Sprite GetSprite(InputSymbol input)
+    {
+        for (int i = 0; i < InputManager.Instance.pictoSprites.Count; i++)
+        {
+            if (input.ToString() == InputManager.Instance.pictoSprites[i].ToString())
+            {
+                return InputManager.Instance.pictoSprites[i];
+            }
+        }
+        return null;
     }
 }

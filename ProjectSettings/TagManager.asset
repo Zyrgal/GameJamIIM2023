@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: InactiveEmployee
+    uniqueID: 3891199473
+    locked: 0
+  - name: ActiveEmployee
+    uniqueID: 2718223113
+    locked: 0
   - name: Desk
     uniqueID: 3562987053
     locked: 0
