@@ -70,6 +70,8 @@ public class EmployeeData : MonoBehaviour
 
     [SerializeField] List<GameObject> everyWearedObject;
     [SerializeField] List<GameObject> everyHead;
+    [SerializeField] List<Sprite> bodyColor;
+    [SerializeField] SpriteRenderer body;
 
     [SerializeField] public SheetData sheetData;
 
@@ -145,7 +147,20 @@ public class EmployeeData : MonoBehaviour
             }
         }
 
-        everyHead[Random.Range(0, everyHead.Count)].SetActive(true);
+        int random = Random.Range(0, everyHead.Count);
+        if (employeeCloth == "Débardeur_b" || employeeCloth == "T-shirt_b")
+        {
+            random = 2;
+        }
+        everyHead[random].SetActive(true);
+        if (random == 0 || random == 1)
+        {
+            body.sprite = bodyColor[0];
+        }
+        else
+        {
+            body.sprite = bodyColor[1];
+        }
     }
 
     public void SetSheetData()
