@@ -123,6 +123,62 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4961574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4961576}
+  - component: {fileID: 4961575}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &4961575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b463534db43429a4c80b348be24659f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - name: 
+    _clip: {fileID: 0}
+    _volume: 0
+    _pitch: 0
+    _source: {fileID: 0}
+  Music:
+    name: 
+    _clip: {fileID: 0}
+    _volume: 0
+    _pitch: 0
+    _source: {fileID: 0}
+--- !u!4 &4961576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961574}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 946.2187, y: 396.93, z: -5.4976306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &219181810
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,8 +309,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mappings:
+  - symbol: 19
+    keyCode: 113
+  - symbol: 8
+    keyCode: 104
+  - symbol: 12
+    keyCode: 104
+  - symbol: 3
+    keyCode: 104
+  - symbol: 5
+    keyCode: 104
+  - symbol: 21
+    keyCode: 104
+  - symbol: 22
+    keyCode: 104
+  - symbol: 15
+    keyCode: 104
+  - symbol: 14
+    keyCode: 104
+  - symbol: 1
+    keyCode: 104
+  - symbol: 7
+    keyCode: 104
+  - symbol: 10
+    keyCode: 104
+  - symbol: 17
+    keyCode: 104
+  - symbol: 11
+    keyCode: 104
+  - symbol: 4
+    keyCode: 104
+  - symbol: 18
+    keyCode: 104
+  - symbol: 6
+    keyCode: 104
+  - symbol: 9
+    keyCode: 104
+  - symbol: 13
+    keyCode: 104
+  - symbol: 20
+    keyCode: 104
+  - symbol: 23
+    keyCode: 104
+  - symbol: 16
+    keyCode: 104
+  - symbol: 2
+    keyCode: 104
   - symbol: 0
-    keyCode: 48
+    keyCode: 104
 --- !u!4 &712071916
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,6 +1189,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIClock
       objectReference: {fileID: 0}
+    - target: {fileID: 6939622442876531736, guid: bd11796bca3a0bf43ab6464c82b8e26b, type: 3}
+      propertyPath: timeToCompleteDay
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8891792984445142395, guid: bd11796bca3a0bf43ab6464c82b8e26b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1181,3 +1287,4 @@ SceneRoots:
   - {fileID: 867965969}
   - {fileID: 883205271}
   - {fileID: 712071916}
+  - {fileID: 4961576}

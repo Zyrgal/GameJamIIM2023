@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIClock : MonoBehaviour
 {
+    public static UIClock Instance;
+
     [SerializeField] private float timeToCompleteDay;
+    public Action DayOverAction;
 
     private Transform hoursHandTransform;
     private Transform minutesHandTransform;
@@ -12,6 +16,7 @@ public class UIClock : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         minutesHandTransform = transform.Find("minutes");
         hoursHandTransform = transform.Find("hours");
     }
@@ -27,5 +32,11 @@ public class UIClock : MonoBehaviour
 
         float hoursPerDay = 24f;
         minutesHandTransform.eulerAngles = new Vector3(0, 0, -dayNormalized * rotationDegreesPerDay * hoursPerDay);
+
+        if (hoursHandTransform.eulerAngles.z < 2)
+        {
+            DayOverAction.Invoke();
+            Debug.Log("day over");
+        }
     }
 }

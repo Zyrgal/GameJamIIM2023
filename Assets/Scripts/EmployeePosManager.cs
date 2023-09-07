@@ -26,12 +26,7 @@ public class EmployeePosManager : MonoBehaviour
         offset = new Vector3(1, 0, 0);
 
 
-        for (int i = 0; i < nbOfEmployeePos; i++)
-        {
-            Vector3 newPos = gameObject.transform.position + offset;
-            employeePosList.Add(newPos);
-            offset += new Vector3(offsetFromLastPos,0);
-        }
+       
     }
 
     public void SpawnEmployee()
