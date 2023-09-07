@@ -74,6 +74,12 @@ public class RulesScriptable : MonoBehaviour
             GameObject instantiateSheet = Instantiate(sheetPrefab, canvas.transform);
             instantiateEmployee.GetComponent<EmployeeData>().sheetData = instantiateSheet.GetComponent<SheetData>();
             int random = UnityEngine.Random.Range(0, rulesList.Count);
+            if (i == 0)
+            {
+                employeeList[0].GetComponent<EmployeeData>().alrdyChangedColor = true;
+                employeeList[0].GetComponent<EmployeeData>().SetLayerActiveEmployee();
+                employeeList[0].GetComponent<EmployeeData>().SetToWhiteColor();
+            }
             dailyRules[(int)rulesList[random].enumRule].initEmployee(rulesList[random].rule, instantiateEmployee.GetComponent<EmployeeData>());
         }
     }
@@ -341,18 +347,24 @@ public class RulesScriptable : MonoBehaviour
         if (!foundDoor) //Garder
         {
             Debug.Log("Mauvaise combinaison");
-            isValid = false; //Le joueur à tapé un mauvais mdp
+            isValid = false; //Le joueur à tapé une combinaison qui ne correspond à aucune porte
+            PatronGauge.Instance.BossAngriedGaugeImpact();
         }
 
         if (isValid)
         {
             Debug.Log("Bonne porte");
-            //La porte bonne porte
+            PatronGauge.Instance.BossSatisfiedGaugeImpact();
+            //Se dirige vers l'ascensseur
+            EmployeePosManager.instance.RemoveEmployee();
         }
         else
         {
             Debug.Log("Mauvaise porte");
-            //La mauvaise
+            if (foundDoor)
+            {
+                PatronGauge.Instance.BossAngriedGaugeImpact();
+            }
         }
     }
 }

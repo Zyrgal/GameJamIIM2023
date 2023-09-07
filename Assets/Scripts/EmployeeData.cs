@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public enum EnumRule
 {
@@ -75,6 +76,8 @@ public class EmployeeData : MonoBehaviour
 
     [SerializeField] public SheetData sheetData;
 
+    public bool alrdyChangedColor = false;
+
     int combinaisonCount = 6;
 
     private void Start()
@@ -89,6 +92,11 @@ public class EmployeeData : MonoBehaviour
         SetEmployee();
         SetEmployeeVisual();
         SetSheetData();
+
+        if (!alrdyChangedColor)
+        {
+            SetToShadowColor();
+        }
     }
 
     public void RandomiseCombinaison(List<InputSymbol> combinaisonToRandomise)
@@ -130,6 +138,51 @@ public class EmployeeData : MonoBehaviour
         {
             employeeAccessory = DataList.instance.savedAccessoryList[Random.Range(0, DataList.instance.savedAccessoryList.Count)];
         }
+    }
+
+    public void SetToShadowColor()
+    {
+        foreach (var item in everyWearedObject)
+        {
+            item.GetComponent<SpriteRenderer>().color = Color.black;
+        }
+
+        foreach (var item in everyHead)
+        {
+            item.GetComponent<SpriteRenderer>().color = Color.black;
+        }
+
+        body.GetComponent<SpriteRenderer>().color = Color.black;
+    }
+
+    public void SetToWhiteColor()
+    {
+        foreach (var item in everyWearedObject)
+        {
+            item.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        foreach (var item in everyHead)
+        {
+            item.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+
+        body.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    public void SetLayerActiveEmployee()
+    {
+        foreach (var item in everyWearedObject)
+        {
+            item.GetComponent<SpriteRenderer>().sortingLayerName = "ActiveEmployee";
+        }
+
+        foreach (var item in everyHead)
+        {
+            item.GetComponent<SpriteRenderer>().sortingLayerName = "ActiveEmployee";
+        }
+
+        body.GetComponent<SpriteRenderer>().sortingLayerName = "ActiveEmployee";
     }
 
     private void SetEmployeeVisual()

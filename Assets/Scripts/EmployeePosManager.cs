@@ -43,7 +43,9 @@ public class EmployeePosManager : MonoBehaviour
         Destroy(employeeList[0].gameObject);
         employeeList.Remove(employeeList[0]);
         employeePosIndex--;
-        UpdateEmployeesColor();
+
+        GetComponent<EmployeeData>().SetLayerActiveEmployee();
+        GetComponent<EmployeeData>().SetToWhiteColor();
 
         for (int i = 0; i <= employeeList.Count; i++)
         {
@@ -63,13 +65,13 @@ public class EmployeePosManager : MonoBehaviour
         {
             if (i == 0)
             {
-                employeeList[i].gameObject.transform.Find("Body").GetComponent<SpriteRenderer>().color = Color.white;
-                employeeList[i].gameObject.transform.position.Set(employeeList[i].gameObject.transform.position.x, employeeList[i].gameObject.transform.position.y, 0);
+                //employeeList[i].gameObject.transform.Find("Body").GetComponent<SpriteRenderer>().color = Color.white;
+                //employeeList[i].gameObject.transform.position.Set(employeeList[i].gameObject.transform.position.x, employeeList[i].gameObject.transform.position.y, 0);
             }
             else
             {
-                employeeList[i].gameObject.transform.Find("Body").GetComponent<SpriteRenderer>().color = Color.black;
-                employeeList[i].gameObject.transform.position.Set(employeeList[i].gameObject.transform.position.x, employeeList[i].gameObject.transform.position.y, 1);
+                //employeeList[i].gameObject.transform.Find("Body").GetComponent<SpriteRenderer>().color = Color.black;
+                //employeeList[i].gameObject.transform.position.Set(employeeList[i].gameObject.transform.position.x, employeeList[i].gameObject.transform.position.y, 1);
             }
         }
     }   

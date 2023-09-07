@@ -58,6 +58,7 @@ public class InputManager : MonoBehaviour
                 if(_symbolsTyped.Count > 1)
                 {
                     GoToDoor();
+                    _symbolsTyped.Clear();
                     // Appeler ici la fonction qui vérifie si les symboles sont bons dans les rules
                 }   
             }
