@@ -110,17 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ae9ad7962afd04794119d211e013ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combinaison1: 
-  combinaison2: 
-  combinaison3: 
-  FirstName:
-  - Machin
-  - kik
-  LastName:
-  - Truc
-  - lol
-  entrepriseName: 0
-  employeeClothing: 0
-  employeeAccesory: 0
+  combinaison1: 1300000008000000
+  combinaison2: 130000000c000000
+  combinaison3: 1300000003000000
   employeeLastname: 0
   employeeFirstname: 0
+  employeeDescription: 
+  employeeEntreprise: 
+  employeeCloth: 
+  employeeAccessory: 

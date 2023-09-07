@@ -6,7 +6,7 @@ using UnityEngine;
 public delegate void InitDelegate(Rule rule);
 public delegate void InitEmployeeDelegate(Rule rule, EmployeeData employeeData);
 public delegate bool ValidateDelegate(Rule rule, EmployeeData employeeData);
-public struct RuleFunc
+public class RuleFunc
 {
     public EnumRule enumRules;
     public InitDelegate initFunction;
@@ -25,11 +25,17 @@ public struct RuleFunc
 [Serializable]
 public class Rule
 {
-    public LetterToSeach letter;
+    public string letter;
+    public string word;
+    public string entrepriseName;
+    public string employeeClothing;
+    public string employeeAccesory;
+
+    /*public LetterToSeach letter;
     public WordToSeach word;
     public EntrepriseName entrepriseName;
     public EmployeeClothing employeeClothing;
-    public EmployeeAccesory employeeAccesory;
+    public EmployeeAccesory employeeAccesory;*/
 
     public override string ToString()
     {

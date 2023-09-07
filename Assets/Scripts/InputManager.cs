@@ -43,6 +43,7 @@ public class InputManager : MonoBehaviour
 
     [SerializeField] private InputMapping[] _mappings;
     private List<InputSymbol> _symbolsTyped = new List<InputSymbol>();
+    public RulesScriptable rulesScriptable;
 
     private void Update()
     {
@@ -51,11 +52,12 @@ public class InputManager : MonoBehaviour
             if(Input.GetKeyDown(mapping.keyCode))
             {
                 _symbolsTyped.Add(mapping.symbol);
+                Debug.Log("Symbole tapé = " + mapping.symbol);
 
-                if(_symbolsTyped.Count > 3)
+                if(_symbolsTyped.Count > 1)
                 {
+                    GoToDoor();
                     // Appeler ici la fonction qui vérifie si les symboles sont bons dans les rules
-                    Debug.Log("Checking symbols");
                 }   
             }
         }
@@ -84,6 +86,11 @@ public class InputManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    public void GoToDoor()
+    {
+        rulesScriptable.CheckChoosenDoor(_symbolsTyped);
     }
 
 }
