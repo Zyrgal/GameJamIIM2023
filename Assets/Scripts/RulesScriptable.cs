@@ -36,6 +36,8 @@ public class RulesScriptable : MonoBehaviour
     [SerializeField] int doorCount = 3;
     [SerializeField] int rulesCount = 3;
 
+    [SerializeField] GameObject canvas;
+
     public void Start()
     {
         List<List<EnumRule>> listSelected = new List<List<EnumRule>>();
@@ -69,7 +71,7 @@ public class RulesScriptable : MonoBehaviour
         {
             GameObject instantiateEmployee = Instantiate(employeeToSpawn.transform, new Vector3((-8 + (i * 1.125f)), 0, 0), Quaternion.identity).gameObject;
             employeeList.Add(instantiateEmployee);
-            GameObject instantiateSheet = Instantiate(sheetPrefab, new Vector3((-8 + (i * 1.125f)), 0, 0), Quaternion.identity);
+            GameObject instantiateSheet = Instantiate(sheetPrefab, canvas.transform);
             instantiateEmployee.GetComponent<EmployeeData>().sheetData = instantiateSheet.GetComponent<SheetData>();
             int random = UnityEngine.Random.Range(0, rulesList.Count);
             dailyRules[(int)rulesList[random].enumRule].initEmployee(rulesList[random].rule, instantiateEmployee.GetComponent<EmployeeData>());

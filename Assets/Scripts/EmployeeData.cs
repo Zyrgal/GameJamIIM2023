@@ -166,7 +166,7 @@ public class EmployeeData : MonoBehaviour
     {
         for (int i = 0; i < InputManager.Instance.pictoSprites.Count; i++)
         {
-            if (input.ToString() == InputManager.Instance.pictoSprites[i].ToString())
+            if (input.ToString() == InputManager.Instance.pictoSprites[i].name)
             {
                 return InputManager.Instance.pictoSprites[i];
             }
