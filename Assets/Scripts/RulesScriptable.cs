@@ -474,7 +474,7 @@ public class RulesScriptable : MonoBehaviour
     public static bool ValidateLetterRule(Rule rule, EmployeeData employee) 
     {
         string firstName = employee.employeeFirstname;
-        string lastName = employee.employeeFirstname;
+        string lastName = employee.employeeLastname;
         if (firstName.Contains(rule.letter.ToString()) || lastName.Contains(rule.letter.ToString()))
         {
             return true;
@@ -586,6 +586,7 @@ public class RulesScriptable : MonoBehaviour
         if (isValid)
         {
             Debug.Log("Bonne porte");
+            ScoreManager.instance.AddScore();
             PatronGauge.Instance.BossSatisfiedGaugeImpact();
             employeeList[0].GetComponent<EmployeeMovement>().MoveTo(new Vector3(EmployeePosManager.instance.employeePosList[EmployeePosManager.instance.employeePosList.Count - 1].position.x,
                                                                                                                             employeeList[0].transform.position.y),

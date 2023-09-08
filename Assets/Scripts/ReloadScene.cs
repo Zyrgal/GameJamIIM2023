@@ -45,6 +45,7 @@ public class ReloadScene : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Destroy(ScoreManager.instance.gameObject);
         SceneManager.LoadScene(0);
     }
 
