@@ -41,6 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Elevator
+    uniqueID: 3660640205
+    locked: 0
+  - name: InElevatorEmployee
+    uniqueID: 1105374779
+    locked: 0
+  - name: Doors
+    uniqueID: 739899637
+    locked: 0
+  - name: Background
+    uniqueID: 2620217041
+    locked: 0
   - name: InactiveEmployee
     uniqueID: 3891199473
     locked: 0
