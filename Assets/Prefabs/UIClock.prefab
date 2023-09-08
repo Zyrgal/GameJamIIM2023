@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 872272731145711135}
   - component: {fileID: 4284775116274179148}
   - component: {fileID: 6939622442876531736}
+  - component: {fileID: 3045719899949501440}
   m_Layer: 5
   m_Name: UIClock
   m_TagString: Untagged
@@ -241,3 +242,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToCompleteDay: 120
+--- !u!223 &3045719899949501440
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233545681705718395}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: -731980243
+  m_SortingOrder: 2
+  m_TargetDisplay: 0

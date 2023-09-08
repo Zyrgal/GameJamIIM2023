@@ -8,6 +8,7 @@ public class PatronGauge : MonoBehaviour
     public static PatronGauge Instance;
     public Image gauge;
     [SerializeField] GameObject losePanel;
+    public int EmployeeCountBeforeLoseGauge = 5;
 
     private void Awake()
     {
@@ -18,6 +19,14 @@ public class PatronGauge : MonoBehaviour
         else
         {
             Instance = this;
+        }
+    }
+
+    private void Update()
+    {
+        if (EmployeePosManager.instance.employeeList.Count >= EmployeeCountBeforeLoseGauge) 
+        {
+            gauge.fillAmount += 0.0001f;
         }
     }
 

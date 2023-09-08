@@ -21,9 +21,9 @@ public class EmployeeMovement : MonoBehaviour
 
     public void trigger_destroy()
     {
-        Debug.Log("test " + this.gameObject.name);
-        Destroy(this.gameObject.GetComponent<EmployeeData>().sheetData.gameObject);
+        //Debug.Log("test " + this.gameObject.name);
         Destroy(this.gameObject);
+        //Destroy(this.gameObject.GetComponent<EmployeeData>().sheetData.gameObject);
     }
 
     private IEnumerator MoveToCoroutine(Vector3 targetPos, bool moveascenc = false)
@@ -41,7 +41,7 @@ public class EmployeeMovement : MonoBehaviour
         {
             animator.SetTrigger("Yeet");
             doors.GetComponent<Door_shut>().employee = this.gameObject;
-            this.gameObject.name="willtakedoor";
+            //this.gameObject.name="willtakedoor";
             while (Vector3.Distance(transform.position, targetPos) > 0.1f)
             {
                 transform.position = Vector3.Lerp(pos, targetPos, t);

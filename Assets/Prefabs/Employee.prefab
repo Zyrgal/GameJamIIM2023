@@ -2219,8 +2219,8 @@ MonoBehaviour:
   combinaison1: 1300000008000000
   combinaison2: 130000000c000000
   combinaison3: 1300000003000000
-  employeeLastname: 0
-  employeeFirstname: 0
+  employeeLastname: 
+  employeeFirstname: 
   employeeDescription: 
   employeeEntreprise: 
   employeeCloth: 

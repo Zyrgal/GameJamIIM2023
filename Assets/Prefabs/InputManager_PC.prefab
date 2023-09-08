@@ -115,7 +115,7 @@ MonoBehaviour:
   - symbol: 16
     keyCode: 110
   - symbol: 2
-    keyCode: 109
+    keyCode: 111
   - symbol: 0
-    keyCode: 44
+    keyCode: 112
   rulesScriptable: {fileID: 0}

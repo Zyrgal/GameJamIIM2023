@@ -8,7 +8,6 @@ public class UIClock : MonoBehaviour
     public static UIClock Instance;
 
     [SerializeField] private float timeToCompleteDay;
-    public Action DayOverAction;
 
     private Transform hoursHandTransform;
     private Transform minutesHandTransform;
@@ -35,7 +34,6 @@ public class UIClock : MonoBehaviour
 
         if (hoursHandTransform.eulerAngles.z < 2)
         {
-            DayOverAction.Invoke();
             Debug.Log("day over");
         }
     }

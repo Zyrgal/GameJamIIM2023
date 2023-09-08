@@ -597,6 +597,7 @@ public class RulesScriptable : MonoBehaviour
             PatronGauge.Instance.BossSatisfiedGaugeImpact();
             employeeList[0].GetComponent<EmployeeMovement>().MoveTo(EmployeePosManager.instance.posAscensseur.position, true);
             EmployeePosManager.instance.RemoveEmployee();
+            employeeList.Remove(employeeList[0]);
             Loupiotte.Instance.ChangeLoupiotteColor(Color.green);
         }
         else

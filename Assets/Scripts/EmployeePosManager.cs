@@ -59,11 +59,11 @@ public class EmployeePosManager : MonoBehaviour
 
         if (index > employeePosList.Count - 1)
         {
-            employeeList[index].MoveTo(employeePosList[4].position, false);
+            employeeList[index].MoveTo(employeePosList[4].position);
         }
         else
         {
-            employeeList[index].MoveTo(employeePosList[index].position, index == employeePosList.Count - 1);
+            employeeList[index].MoveTo(employeePosList[index].position);
         }
     }
 

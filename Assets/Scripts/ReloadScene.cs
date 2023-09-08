@@ -7,7 +7,7 @@ public class ReloadScene : MonoBehaviour
 {
     public static ReloadScene instance;
     private RulesScriptable rulesScriptable;
-    bool needToUpgradeDifficulty = false;
+    public bool needToUpgradeDifficulty = false;
 
     private void Awake()
     {
@@ -26,10 +26,7 @@ public class ReloadScene : MonoBehaviour
         {
             UpgradeDifficulty();
         }
-        else
-        {
-            needToUpgradeDifficulty = true;
-        }
+
         rulesScriptable = GameObject.Find("RulesManager").GetComponent<RulesScriptable>();
     }
 
