@@ -1137,6 +1137,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 345383507}
     - target: {fileID: 5792944045619136206, guid: e450764a654d9a845b2cf82befba4309, type: 3}
+      propertyPath: rulesCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5792944045619136206, guid: e450764a654d9a845b2cf82befba4309, type: 3}
       propertyPath: spawnTimer
       value: 2
       objectReference: {fileID: 0}
@@ -1146,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 782417640}
     - target: {fileID: 5792944045619136206, guid: e450764a654d9a845b2cf82befba4309, type: 3}
       propertyPath: employeeNbrToSpawn
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5792944045619136206, guid: e450764a654d9a845b2cf82befba4309, type: 3}
       propertyPath: listRulesTMP.Array.size
@@ -1360,7 +1364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -240, y: 487}
+  m_AnchoredPosition: {x: -240.00003, y: 487}
   m_SizeDelta: {x: -1354.82, y: -1120.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1698774402
@@ -2045,7 +2049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4287783306001478108, guid: 1e953e58b2864e34a9cc9296856528c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -386
+      value: -328
       objectReference: {fileID: 0}
     - target: {fileID: 4287783306001478108, guid: 1e953e58b2864e34a9cc9296856528c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2060,12 +2064,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5447715263015648894, guid: 1e953e58b2864e34a9cc9296856528c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447715263015648894, guid: 1e953e58b2864e34a9cc9296856528c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447715263015648894, guid: 1e953e58b2864e34a9cc9296856528c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447715263015648894, guid: 1e953e58b2864e34a9cc9296856528c2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 106.39999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447715263015648894, guid: 1e953e58b2864e34a9cc9296856528c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 316
+      value: 365.00006
       objectReference: {fileID: 0}
     - target: {fileID: 6784449833186063581, guid: 1e953e58b2864e34a9cc9296856528c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -249
+      value: -295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
