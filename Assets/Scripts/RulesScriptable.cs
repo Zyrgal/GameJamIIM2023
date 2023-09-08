@@ -36,14 +36,14 @@ public class RulesScriptable : MonoBehaviour
     [SerializeField] GameObject employeeToSpawn;
     [SerializeField] List<GameObject> employeeList;
 
-    [SerializeField] int doorCount = 3;
-    [SerializeField] int rulesCount = 3;
-    [SerializeField] int spawnedEmployeeCount = 0;
+    private int doorCount = 3;
+    public int rulesCount = 3;
+    public int spawnedEmployeeCount = 0;
 
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject spawnPointSheet;
 
-    [SerializeField] float spawnTimer;
+    public float spawnTimer;
     [SerializeField] float savedSpawnTimer;
 
     [SerializeField] List<TextMeshProUGUI> listRulesTMP = new List<TextMeshProUGUI>();

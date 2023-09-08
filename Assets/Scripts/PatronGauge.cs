@@ -7,6 +7,7 @@ public class PatronGauge : MonoBehaviour
 {
     public static PatronGauge Instance;
     public Image gauge;
+    [SerializeField] GameObject losePanel;
 
     private void Awake()
     {
@@ -23,11 +24,20 @@ public class PatronGauge : MonoBehaviour
     public void BossAngriedGaugeImpact()
     {
         gauge.fillAmount += 0.1f;
+        CheckIfLoose();
     }
 
     public void BossSatisfiedGaugeImpact()
     {
         gauge.fillAmount -= 0.05f;
+    }
+
+    public void CheckIfLoose()
+    {
+        if (gauge.fillAmount >= 1)
+        {
+            losePanel.SetActive(true);
+        }
     }
 
 }
