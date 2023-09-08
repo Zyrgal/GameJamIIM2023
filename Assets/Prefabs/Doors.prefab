@@ -262,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7529684158306225486}
   - component: {fileID: 4208038354445908738}
+  - component: {fileID: 2609054783752279486}
   m_Layer: 0
   m_Name: Doors
   m_TagString: Untagged
@@ -309,6 +310,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2609054783752279486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601441610576562392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f4b16bd2078cf469e94b8de11e1db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6968883452142800048
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +403,6 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

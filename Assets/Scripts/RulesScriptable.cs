@@ -595,7 +595,7 @@ public class RulesScriptable : MonoBehaviour
             Debug.Log("Bonne porte");
             ScoreManager.instance.AddScore();
             PatronGauge.Instance.BossSatisfiedGaugeImpact();
-            employeeList[0].GetComponent<EmployeeMovement>().MoveTo(EmployeePosManager.instance.posAscensseur.position);
+            employeeList[0].GetComponent<EmployeeMovement>().MoveTo(EmployeePosManager.instance.posAscensseur.position, true);
             EmployeePosManager.instance.RemoveEmployee();
             Loupiotte.Instance.ChangeLoupiotteColor(Color.green);
         }

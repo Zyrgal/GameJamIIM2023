@@ -29,7 +29,7 @@ public class EmployeePosManager : MonoBehaviour
 
         if (employeePosIndex < employeePosList.Count-1)
         {
-            employee.MoveTo(employeePosList[employeePosIndex].position);
+            employee.MoveTo(employeePosList[employeePosIndex].position, false);
             employeePosIndex++;
         }
 
@@ -59,11 +59,11 @@ public class EmployeePosManager : MonoBehaviour
 
         if (index > employeePosList.Count - 1)
         {
-            employeeList[index].MoveTo(employeePosList[4].position);
+            employeeList[index].MoveTo(employeePosList[4].position, false);
         }
         else
         {
-            employeeList[index].MoveTo(employeePosList[index].position);
+            employeeList[index].MoveTo(employeePosList[index].position, index == employeePosList.Count - 1);
         }
     }
 
