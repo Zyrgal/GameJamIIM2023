@@ -586,6 +586,7 @@ public class RulesScriptable : MonoBehaviour
         {
             Debug.Log("Mauvaise combinaison");
             isValid = false; //Le joueur à tapé une combinaison qui ne correspond à aucune porte
+            Loupiotte.Instance.ChangeLoupiotteColor(Color.red);
             PatronGauge.Instance.BossAngriedGaugeImpact();
         }
 
@@ -596,6 +597,7 @@ public class RulesScriptable : MonoBehaviour
             PatronGauge.Instance.BossSatisfiedGaugeImpact();
             employeeList[0].GetComponent<EmployeeMovement>().MoveTo(EmployeePosManager.instance.posAscensseur.position);
             EmployeePosManager.instance.RemoveEmployee();
+            Loupiotte.Instance.ChangeLoupiotteColor(Color.green);
         }
         else
         {
@@ -603,6 +605,7 @@ public class RulesScriptable : MonoBehaviour
             if (foundDoor)
             {
                 PatronGauge.Instance.BossAngriedGaugeImpact();
+                Loupiotte.Instance.ChangeLoupiotteColor(Color.red);
             }
         }
     }
