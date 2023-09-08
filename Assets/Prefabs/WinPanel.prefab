@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Bravo vous avez termin\xE9 votre journ\xE9e"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 06a41e4799e72fd4bb3f54d92a80135e, type: 2}
+  m_sharedMaterial: {fileID: 7001976246125846474, guid: 06a41e4799e72fd4bb3f54d92a80135e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -317,8 +317,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score actuel : '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 06a41e4799e72fd4bb3f54d92a80135e, type: 2}
+  m_sharedMaterial: {fileID: 7001976246125846474, guid: 06a41e4799e72fd4bb3f54d92a80135e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -451,8 +451,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Chargement de la prochaine journ\xE9e ..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 06a41e4799e72fd4bb3f54d92a80135e, type: 2}
+  m_sharedMaterial: {fileID: 7001976246125846474, guid: 06a41e4799e72fd4bb3f54d92a80135e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
