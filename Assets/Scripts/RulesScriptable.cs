@@ -65,7 +65,7 @@ public class RulesScriptable : MonoBehaviour
             do
             {
                 int randomRuleType = UnityEngine.Random.Range(0, 5);
-                porte.enumRule = DefineRuleType(0);
+                porte.enumRule = DefineRuleType(randomRuleType);
             }
             while (listSelected[porte.id].Contains(porte.enumRule));
 
@@ -77,7 +77,7 @@ public class RulesScriptable : MonoBehaviour
             string mergedString = null;
             if (porte.enumRule.ToString() == "letter")
             {
-                rule = "FirstName must contains the letter => ";
+                rule = "FirstName or LastName must contains the letter => ";
                 targetedThing = porte.rule.letter;
                 mergedString = rule + targetedThing;
             }
@@ -150,21 +150,20 @@ public class RulesScriptable : MonoBehaviour
 
     public static void InitEmployeLetter(Rule rule, EmployeeData employee)
     {
-        string employeeName = employee.employeeFirstname;
         bool isValid = false;
 
-
-        employeeName = DataList.instance.savedFirstNameList[UnityEngine.Random.Range(0, DataList.instance.savedFirstNameList.Count)];
+        employee.employeeFirstname = DataList.instance.savedFirstNameList[UnityEngine.Random.Range(0, DataList.instance.savedFirstNameList.Count)];
 
         while (!isValid)
         {
-            if (employeeName.Contains(rule.letter.ToString()))
+            if (employee.employeeFirstname.Contains(rule.letter.ToString()) || employee.employeeLastname.Contains(rule.letter.ToString()))
             {
                 isValid = true;
             }
             else
             {
-                employeeName = DataList.instance.savedFirstNameList[UnityEngine.Random.Range(0, DataList.instance.savedFirstNameList.Count)];
+                employee.employeeFirstname = DataList.instance.savedFirstNameList[UnityEngine.Random.Range(0, DataList.instance.savedFirstNameList.Count)];
+                employee.employeeLastname = DataList.instance.savedLastNameList[UnityEngine.Random.Range(0, DataList.instance.savedLastNameList.Count)];
             }
         }
     }
@@ -305,8 +304,9 @@ public class RulesScriptable : MonoBehaviour
 
     public static bool ValidateLetterRule(Rule rule, EmployeeData employee) 
     {
-        string name = employee.employeeFirstname;
-        if (name.Contains(rule.letter.ToString()))
+        string firstName = employee.employeeFirstname;
+        string lastName = employee.employeeFirstname;
+        if (firstName.Contains(rule.letter.ToString()) || lastName.Contains(rule.letter.ToString()))
         {
             return true;
         }

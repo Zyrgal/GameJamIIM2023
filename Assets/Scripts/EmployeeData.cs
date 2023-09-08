@@ -114,27 +114,27 @@ public class EmployeeData : MonoBehaviour
 
     private void SetEmployee()
     {
-        if (employeeLastname != null)
+        if (employeeLastname == "")
         {
             employeeLastname = DataList.instance.savedLastNameList[Random.Range(0, DataList.instance.savedLastNameList.Count)];
         }
-        if (employeeFirstname != null)
+        if (employeeFirstname == "")
         {
             employeeFirstname = DataList.instance.savedFirstNameList[Random.Range(0, DataList.instance.savedFirstNameList.Count)];
         }
-        if (employeeDescription != null)
+        if (employeeDescription == "")
         {
             employeeDescription = DataList.instance.savedDescriptionsList[Random.Range(0, DataList.instance.savedDescriptionsList.Count)];
         }
-        if (employeeEntreprise != null)
+        if (employeeEntreprise == "")
         {
             employeeEntreprise = DataList.instance.savedEntrepriseNameList[Random.Range(0, DataList.instance.savedEntrepriseNameList.Count)];
         }
-        if (employeeCloth != null)
+        if (employeeCloth == "")
         {
             employeeCloth = DataList.instance.savedClothList[Random.Range(0, DataList.instance.savedClothList.Count)];
         }
-        if (employeeAccessory != null)
+        if (employeeAccessory == "")
         {
             employeeAccessory = DataList.instance.savedAccessoryList[Random.Range(0, DataList.instance.savedAccessoryList.Count)];
         }
