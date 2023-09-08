@@ -5,8 +5,6 @@ using System.Data;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 [Serializable]
@@ -33,18 +31,19 @@ public class RulesScriptable : MonoBehaviour
     [SerializeField] List<RuleDoor> rulesList = new List<RuleDoor>();
 
     [SerializeField] int employeeNbrToSpawn;
+    public float spawnTimer;
+    float savedSpawnTimer;
+
+    public int spawnedEmployeeCount = 0;
     [SerializeField] GameObject employeeToSpawn;
     [SerializeField] List<GameObject> employeeList;
 
     private int doorCount = 3;
     public int rulesCount = 3;
-    public int spawnedEmployeeCount = 0;
 
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject spawnPointSheet;
 
-    public float spawnTimer;
-    [SerializeField] float savedSpawnTimer;
 
     [SerializeField] List<TextMeshProUGUI> listRulesTMP = new List<TextMeshProUGUI>();
 
@@ -94,7 +93,7 @@ public class RulesScriptable : MonoBehaviour
             #region SetRuleSheetVisual
             if (porte.enumRule.ToString() == "letter")
             {
-                rule = "FirstName or LastName must contains the letter => ";
+                rule = "Name must contains a ";
                 targetedThing = porte.rule.letter;
                 if (i >= 0 && i <= 2)
                 {
@@ -114,7 +113,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else if(porte.enumRule.ToString() == "word")
             {
-                rule = "Description must contains the word => ";
+                rule = "info must contains the word ";
                 targetedThing = porte.rule.word;
                 if (i >= 0 && i <= 2)
                 {
@@ -134,7 +133,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else if (porte.enumRule.ToString() == "entrepriseName")
             {
-                rule = "Service must be => ";
+                rule = "Must work at ";
                 targetedThing = porte.rule.entrepriseName;
                 if (i >= 0 && i <= 2)
                 {
@@ -154,7 +153,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else if (porte.enumRule.ToString() == "employeeCloth")
             {
-                rule = "The employee must wear => ";
+                rule = "must wear ";
                 targetedThing = porte.rule.employeeClothing;
                 if (i >= 0 && i <= 2)
                 {
@@ -174,7 +173,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else if (porte.enumRule.ToString() == "employeeAccessory")
             {
-                rule = "The employee must wear => ";
+                rule = "must wear ";
                 targetedThing = porte.rule.employeeAccesory;
                 if (i >= 0 && i <= 2)
                 {
@@ -237,45 +236,45 @@ public class RulesScriptable : MonoBehaviour
             {
                 if (savedMergedString_3_Rule_1 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " and " + savedMergedString_2_Rule_1 + " and " + savedMergedString_3_Rule_1;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " and " + savedMergedString_2_Rule_1 + " and " + savedMergedString_3_Rule_1;
                 }
                 else if (savedMergedString_2_Rule_1 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " and " + savedMergedString_2_Rule_1;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " and " + savedMergedString_2_Rule_1;
                 }
                 else
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1;
                 }
             }
             else if (i % doorCount == 1)
             {
                 if (savedMergedString_3_Rule_2 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " and " + savedMergedString_2_Rule_2 + " and " + savedMergedString_3_Rule_2;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " and " + savedMergedString_2_Rule_2 + " and " + savedMergedString_3_Rule_2;
                 }
                 else if (savedMergedString_2_Rule_2 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " and " + savedMergedString_2_Rule_2;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " and " + savedMergedString_2_Rule_2;
                 }
                 else
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2;
                 }
             }
             else if (i % doorCount == 2)
             {
                 if (savedMergedString_3_Rule_3 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " and " + savedMergedString_2_Rule_3 + " and " + savedMergedString_3_Rule_3;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " and " + savedMergedString_2_Rule_3 + " and " + savedMergedString_3_Rule_3;
                 }
                 else if (savedMergedString_2_Rule_3 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " and " + savedMergedString_2_Rule_3;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " and " + savedMergedString_2_Rule_3;
                 }
                 else
                 {
-                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3;
                 }
             }
             #endregion
@@ -297,10 +296,10 @@ public class RulesScriptable : MonoBehaviour
         employeeList.Add(instantiateEmployee);
         GameObject instantiateSheet = Instantiate(sheetPrefab, spawnPointSheet.transform.position, Quaternion.identity,canvas.transform);
         instantiateEmployee.GetComponent<EmployeeData>().sheetData = instantiateSheet.GetComponent<SheetData>();
-        int random = UnityEngine.Random.Range(0, rulesList.Count);
+        //int random = UnityEngine.Random.Range(0, rulesList.Count);
+        int chosenDoor = UnityEngine.Random.Range(0, doorCount);
         if (spawnedEmployeeCount == 0)
         {
-
             employeeList[0].GetComponent<EmployeeData>().sheetData.choosen = true;
             employeeList[0].GetComponent<EmployeeData>().sheetData.DisplaySheet();
             employeeList[0].GetComponent<EmployeeData>().alrdyChangedColor = true;
@@ -308,7 +307,14 @@ public class RulesScriptable : MonoBehaviour
             employeeList[0].GetComponent<EmployeeData>().SetToWhiteColor();
         }
         spawnedEmployeeCount++;
-        dailyRules[(int)rulesList[random].enumRule].initEmployee(rulesList[random].rule, instantiateEmployee.GetComponent<EmployeeData>());
+
+        for (int j = 0; j < rulesList.Count; j++)
+        {
+            if (rulesList[j].id == chosenDoor)
+            {
+                dailyRules[(int)rulesList[j].enumRule].initEmployee(rulesList[j].rule, instantiateEmployee.GetComponent<EmployeeData>());
+            }
+        }
         
         if (spawnedEmployeeCount < employeeNbrToSpawn)
         {
@@ -588,9 +594,7 @@ public class RulesScriptable : MonoBehaviour
             Debug.Log("Bonne porte");
             ScoreManager.instance.AddScore();
             PatronGauge.Instance.BossSatisfiedGaugeImpact();
-            employeeList[0].GetComponent<EmployeeMovement>().MoveTo(new Vector3(EmployeePosManager.instance.employeePosList[EmployeePosManager.instance.employeePosList.Count - 1].position.x,
-                                                                                                                            employeeList[0].transform.position.y),
-                                                                                                                            true);
+            employeeList[0].GetComponent<EmployeeMovement>().MoveTo(EmployeePosManager.instance.posAscensseur.position);
             EmployeePosManager.instance.RemoveEmployee();
         }
         else
