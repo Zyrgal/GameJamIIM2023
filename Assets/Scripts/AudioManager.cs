@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] Sound[] _sounds;
 
     [HideInInspector] public Sound Music;
+    [HideInInspector] public Sound Crowd;
     float _musicVolume;
     public float MusicVolume
     {
@@ -53,19 +54,24 @@ public class AudioManager : MonoBehaviour
                 Music._source.volume = MusicVolume;
                 Music._source.Play();
             }
+
+            if (s.name == "Crowd")
+            {
+                Crowd = s;
+                Crowd._source.loop = true;
+                Crowd._source.Play();
+            }
+
         }
         transform.parent = null;
         DontDestroyOnLoad(gameObject);
     }
 
-    public void PlaySound(string name, bool randomizePitch = false, float pitchRange = 1f)
+    public void PlaySound(string name)
     {
         Sound s = Array.Find(_sounds, sound => sound.name == name);
         s._source.volume = _sfxVolume * s._volume;
-        if (randomizePitch)
-            s._source.pitch = UnityEngine.Random.Range(s._pitch - pitchRange, s._pitch + pitchRange);
-        else
-            s?._source.Play();
+        s?._source.Play();
 
         if (s == null)
         {
