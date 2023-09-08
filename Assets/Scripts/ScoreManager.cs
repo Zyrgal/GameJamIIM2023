@@ -23,13 +23,13 @@ public class ScoreManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
+    /*private void Start()
     {
         if (scoreText == null)
         {
             scoreText = GameObject.Find("ScoreLevel (TMP)").GetComponent<TextMeshProUGUI>();
         }
-    }
+    }*/
 
     public void AddScore()
     {
@@ -37,12 +37,18 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score : " + currentScore.ToString();
     }
 
-    private void OnLevelWasLoaded(int level)
+    /*private void OnLevelWasLoaded(int level)
     {
         if (scoreText == null)
         {
             scoreText = GameObject.Find("ScoreLevel (TMP)").GetComponent<TextMeshProUGUI>();
         }
+        scoreText.text = "Score : " + currentScore.ToString();
+    }*/
+
+    public void SetScoretext(TextMeshProUGUI textScore)
+    {
+        scoreText = textScore;
         scoreText.text = "Score : " + currentScore.ToString();
     }
 

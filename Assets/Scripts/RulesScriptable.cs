@@ -93,7 +93,7 @@ public class RulesScriptable : MonoBehaviour
             #region SetRuleSheetVisual
             if (porte.enumRule.ToString() == "letter")
             {
-                rule = "Name must contains a ";
+                rule = "Nom ou Prénom doit contenir la lettre ";
                 targetedThing = porte.rule.letter;
                 if (i >= 0 && i <= 2)
                 {
@@ -113,7 +113,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else if(porte.enumRule.ToString() == "word")
             {
-                rule = "info must contains the word ";
+                rule = "info doit contenir ";
                 targetedThing = porte.rule.word;
                 if (i >= 0 && i <= 2)
                 {
@@ -133,7 +133,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else if (porte.enumRule.ToString() == "entrepriseName")
             {
-                rule = "Must work at ";
+                rule = "doit travaillé chez ";
                 targetedThing = porte.rule.entrepriseName;
                 if (i >= 0 && i <= 2)
                 {
@@ -153,7 +153,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else if (porte.enumRule.ToString() == "employeeCloth")
             {
-                rule = "must wear ";
+                rule = "doit porter* ";
                 targetedThing = porte.rule.employeeClothing;
                 if (i >= 0 && i <= 2)
                 {
@@ -173,7 +173,7 @@ public class RulesScriptable : MonoBehaviour
             }
             else if (porte.enumRule.ToString() == "employeeAccessory")
             {
-                rule = "must wear ";
+                rule = "doit porter ";
                 targetedThing = porte.rule.employeeAccesory;
                 if (i >= 0 && i <= 2)
                 {
@@ -236,11 +236,11 @@ public class RulesScriptable : MonoBehaviour
             {
                 if (savedMergedString_3_Rule_1 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " and " + savedMergedString_2_Rule_1 + " and " + savedMergedString_3_Rule_1;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " et " + savedMergedString_2_Rule_1 + " et " + savedMergedString_3_Rule_1;
                 }
                 else if (savedMergedString_2_Rule_1 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " and " + savedMergedString_2_Rule_1;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " et " + savedMergedString_2_Rule_1;
                 }
                 else
                 {
@@ -251,11 +251,11 @@ public class RulesScriptable : MonoBehaviour
             {
                 if (savedMergedString_3_Rule_2 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " and " + savedMergedString_2_Rule_2 + " and " + savedMergedString_3_Rule_2;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " et " + savedMergedString_2_Rule_2 + " et " + savedMergedString_3_Rule_2;
                 }
                 else if (savedMergedString_2_Rule_2 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " and " + savedMergedString_2_Rule_2;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " et " + savedMergedString_2_Rule_2;
                 }
                 else
                 {
@@ -266,11 +266,11 @@ public class RulesScriptable : MonoBehaviour
             {
                 if (savedMergedString_3_Rule_3 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " and " + savedMergedString_2_Rule_3 + " and " + savedMergedString_3_Rule_3;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " et " + savedMergedString_2_Rule_3 + " et " + savedMergedString_3_Rule_3;
                 }
                 else if (savedMergedString_2_Rule_3 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " and " + savedMergedString_2_Rule_3;
+                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " et " + savedMergedString_2_Rule_3;
                 }
                 else
                 {
@@ -588,6 +588,8 @@ public class RulesScriptable : MonoBehaviour
             isValid = false; //Le joueur à tapé une combinaison qui ne correspond à aucune porte
             Loupiotte.Instance.ChangeLoupiotteColor(Color.red);
             PatronGauge.Instance.BossAngriedGaugeImpact();
+            SoundManager.instance.PlaySound("Lift_Error");
+            //AudioManager.Instance.PlaySound("Lift_Error");
         }
 
         if (isValid)
@@ -599,6 +601,9 @@ public class RulesScriptable : MonoBehaviour
             EmployeePosManager.instance.RemoveEmployee();
             employeeList.Remove(employeeList[0]);
             Loupiotte.Instance.ChangeLoupiotteColor(Color.green);
+            SoundManager.instance.PlaySound("Lift_Correct");
+
+            //AudioManager.Instance.PlaySound("Lift_Correct");
         }
         else
         {
@@ -607,6 +612,10 @@ public class RulesScriptable : MonoBehaviour
             {
                 PatronGauge.Instance.BossAngriedGaugeImpact();
                 Loupiotte.Instance.ChangeLoupiotteColor(Color.red);
+                SoundManager.instance.PlaySound("Lift_Error");
+
+                //AudioManager.Instance.PlaySound("Lift_Error");
+
             }
         }
     }

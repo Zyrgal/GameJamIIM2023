@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UIClock : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIClock : MonoBehaviour
 
     private Transform hoursHandTransform;
     private Transform minutesHandTransform;
+    [SerializeField] GameObject winPanel;
     private float day;
 
     private void Awake()
@@ -34,7 +36,7 @@ public class UIClock : MonoBehaviour
 
         if (hoursHandTransform.eulerAngles.z < 2)
         {
-            Debug.Log("day over");
+            winPanel.SetActive(true);
         }
     }
 }

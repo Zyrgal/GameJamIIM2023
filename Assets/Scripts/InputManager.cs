@@ -53,7 +53,10 @@ public class InputManager : MonoBehaviour
             if(Input.GetKeyDown(mapping.keyCode))
             {
                 _symbolsTyped.Add(mapping.symbol);
-                PlayerInputPanel.Instance.AddImageToPanel(pictoSprites[(int)mapping.symbol], _symbolsTyped.Count - 1);
+                if (PlayerInputPanel.Instance != null)
+                {
+                    PlayerInputPanel.Instance.AddImageToPanel(pictoSprites[(int)mapping.symbol], _symbolsTyped.Count - 1);
+                }
                 Debug.Log("Symbole tapé = " + mapping.symbol);
 
                 if(_symbolsTyped.Count > 5)

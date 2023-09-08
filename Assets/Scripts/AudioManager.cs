@@ -67,6 +67,14 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void Update()
+    {
+        foreach (Sound s in _sounds) 
+        {
+            s._volume = 1;
+        }
+    }
+
     public void PlaySound(string name)
     {
         Sound s = Array.Find(_sounds, sound => sound.name == name);
