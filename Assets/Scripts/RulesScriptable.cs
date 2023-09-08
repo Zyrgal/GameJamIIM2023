@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 [Serializable]
@@ -35,8 +37,15 @@ public class RulesScriptable : MonoBehaviour
 
     [SerializeField] int doorCount = 3;
     [SerializeField] int rulesCount = 3;
+    [SerializeField] int spawnedEmployeeCount = 0;
 
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject spawnPointSheet;
+
+    [SerializeField] float spawnTimer;
+    [SerializeField] float savedSpawnTimer;
+
+    [SerializeField] List<TextMeshProUGUI> listRulesTMP = new List<TextMeshProUGUI>();
 
     public void Start()
     {
@@ -62,25 +71,80 @@ public class RulesScriptable : MonoBehaviour
 
             listSelected[porte.id].Add(porte.enumRule);
             dailyRules[(int)porte.enumRule].initFunction(porte.rule);
+
+            string rule = null;
+            string targetedThing = null;
+            string mergedString = null;
+            if (porte.enumRule.ToString() == "letter")
+            {
+                rule = "FirstName must contains the letter => ";
+                targetedThing = porte.rule.letter;
+                mergedString = rule + targetedThing;
+            }
+            else if(porte.enumRule.ToString() == "word")
+            {
+                rule = "Description must contains the word => ";
+                targetedThing = porte.rule.word;
+                mergedString = rule + targetedThing;
+            }
+            else if (porte.enumRule.ToString() == "entrepriseName")
+            {
+                rule = "Service must be => ";
+                targetedThing = porte.rule.entrepriseName;
+                mergedString = rule + targetedThing;
+            }
+            else if (porte.enumRule.ToString() == "employeeCloth")
+            {
+                rule = "The employee must wear => ";
+                targetedThing = porte.rule.employeeClothing;
+                mergedString = rule + targetedThing;
+            }
+            else if (porte.enumRule.ToString() == "employeeAccessory")
+            {
+                rule = "The employee must wear => ";
+                targetedThing = porte.rule.employeeAccesory;
+                mergedString = rule + targetedThing;
+            }
+
+            listRulesTMP[i].text = "Rule to acces stage " + porte.id + ": " + mergedString;
             rulesList.Add(porte);
         }
 
         rulesList.Sort((a, b) => a.id - b.id);
 
-        for (int i = 0; i < employeeNbrToSpawn; i++)
+        /*for (int i = 0; i < employeeNbrToSpawn; i++)
         {
-            GameObject instantiateEmployee = Instantiate(employeeToSpawn.transform, new Vector3((-8 + (i * 1.125f)), 0, 0), Quaternion.identity).gameObject;
-            employeeList.Add(instantiateEmployee);
-            GameObject instantiateSheet = Instantiate(sheetPrefab, canvas.transform);
-            instantiateEmployee.GetComponent<EmployeeData>().sheetData = instantiateSheet.GetComponent<SheetData>();
-            int random = UnityEngine.Random.Range(0, rulesList.Count);
-            if (i == 0)
-            {
-                employeeList[0].GetComponent<EmployeeData>().alrdyChangedColor = true;
-                employeeList[0].GetComponent<EmployeeData>().SetLayerActiveEmployee();
-                employeeList[0].GetComponent<EmployeeData>().SetToWhiteColor();
-            }
-            dailyRules[(int)rulesList[random].enumRule].initEmployee(rulesList[random].rule, instantiateEmployee.GetComponent<EmployeeData>());
+            StartCoroutine(SpawnEmployee(employeeNbrToSpawn));
+        }*/
+        savedSpawnTimer = spawnTimer;
+        spawnTimer = 0;
+        StartCoroutine(SpawnEmployee());
+    }
+
+    public IEnumerator SpawnEmployee()
+    {
+        yield return new WaitForSeconds(spawnTimer);
+        GameObject instantiateEmployee = EmployeePosManager.instance.SpawnEmployee();
+        employeeList.Add(instantiateEmployee);
+        GameObject instantiateSheet = Instantiate(sheetPrefab, spawnPointSheet.transform.position, Quaternion.identity,canvas.transform);
+        instantiateEmployee.GetComponent<EmployeeData>().sheetData = instantiateSheet.GetComponent<SheetData>();
+        int random = UnityEngine.Random.Range(0, rulesList.Count);
+        if (spawnedEmployeeCount == 0)
+        {
+
+            employeeList[0].GetComponent<EmployeeData>().sheetData.choosen = true;
+            employeeList[0].GetComponent<EmployeeData>().sheetData.DisplaySheet();
+            employeeList[0].GetComponent<EmployeeData>().alrdyChangedColor = true;
+            employeeList[0].GetComponent<EmployeeData>().SetLayerActiveEmployee();
+            employeeList[0].GetComponent<EmployeeData>().SetToWhiteColor();
+        }
+        spawnedEmployeeCount++;
+        dailyRules[(int)rulesList[random].enumRule].initEmployee(rulesList[random].rule, instantiateEmployee.GetComponent<EmployeeData>());
+        
+        if (spawnedEmployeeCount < employeeNbrToSpawn)
+        {
+            spawnTimer = savedSpawnTimer;
+            StartCoroutine(SpawnEmployee());
         }
     }
 
@@ -355,7 +419,9 @@ public class RulesScriptable : MonoBehaviour
         {
             Debug.Log("Bonne porte");
             PatronGauge.Instance.BossSatisfiedGaugeImpact();
-            //Se dirige vers l'ascensseur
+            employeeList[0].GetComponent<EmployeeMovement>().MoveTo(new Vector3(EmployeePosManager.instance.employeePosList[EmployeePosManager.instance.employeePosList.Count - 1].position.x,
+                                                                                                                            employeeList[0].transform.position.y),
+                                                                                                                            true);
             EmployeePosManager.instance.RemoveEmployee();
         }
         else

@@ -13,7 +13,7 @@ public class EmployeePosManager : MonoBehaviour
     [SerializeField] private GameObject employeePosPrefab;
     SerializedProperty m_OrderInLayer;
 
-    [SerializeField] private List<Transform> employeePosList = new List<Transform>();
+    [SerializeField] public List<Transform> employeePosList = new List<Transform>();
     private List<EmployeeMovement> employeeList = new List<EmployeeMovement>();
     private Vector3 offset;
     private int employeePosIndex = 0;
@@ -23,31 +23,32 @@ public class EmployeePosManager : MonoBehaviour
         instance = this;
     }
 
-    public void SpawnEmployee()
+    public GameObject SpawnEmployee()
     {
-        EmployeeMovement employee = Instantiate(employeePosPrefab, new Vector3(employeePosList[employeePosList.Count-1].position.x, transform.position.y), Quaternion.identity).GetComponent<EmployeeMovement>();
+        EmployeeMovement employee = Instantiate(employeePosPrefab, new Vector3(employeePosList[employeePosList.Count-2].position.x, transform.position.y), Quaternion.identity).GetComponent<EmployeeMovement>();
         employeeList.Add(employee);
-        UpdateEmployeesColor();
 
-        if (employeePosIndex > employeePosList.Count-1)
-            return;
-        else
+        if (employeePosIndex < employeePosList.Count-1)
         {
             employee.MoveTo(employeePosList[employeePosIndex].position);
             employeePosIndex++;
         }
+
+        return employee.gameObject;
     }
 
     public void RemoveEmployee()
     {
-        Destroy(employeeList[0].gameObject);
+        //Destroy(employeeList[0].gameObject);
+        employeeList[0].GetComponent<EmployeeData>().sheetData.HideSheet();
         employeeList.Remove(employeeList[0]);
         employeePosIndex--;
 
-        GetComponent<EmployeeData>().SetLayerActiveEmployee();
-        GetComponent<EmployeeData>().SetToWhiteColor();
+        employeeList[0].GetComponent<EmployeeData>().SetLayerActiveEmployee();
+        employeeList[0].GetComponent<EmployeeData>().SetToWhiteColor();
+        employeeList[0].GetComponent<EmployeeData>().sheetData.DisplaySheet();
 
-        for (int i = 0; i <= employeeList.Count; i++)
+        for (int i = 0; i < employeeList.Count; i++)
         {
             StartCoroutine(MoveEmployeeCoroutine(i));
         }

@@ -55,7 +55,7 @@ public class InputManager : MonoBehaviour
                 _symbolsTyped.Add(mapping.symbol);
                 Debug.Log("Symbole tapé = " + mapping.symbol);
 
-                if(_symbolsTyped.Count > 1)
+                if(_symbolsTyped.Count > 5)
                 {
                     GoToDoor();
                     _symbolsTyped.Clear();

@@ -81,3 +81,12 @@ MonoBehaviour:
   employeeList: []
   doorCount: 3
   rulesCount: 3
+  spawnedEmployeeCount: 0
+  canvas: {fileID: 0}
+  spawnPointSheet: {fileID: 0}
+  spawnTimer: 0
+  savedSpawnTimer: 0
+  listRulesTMP:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -7,7 +7,7 @@ using static UnityEditor.Progress;
 public enum EnumRule
 {
     letter = 0,
-    word,
+    word = 1,
     entrepriseName,
     employeeCloth,
     employeeAccessory

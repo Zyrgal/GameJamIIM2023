@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 5238901668585595545}
   - component: {fileID: 5875954688839884605}
   - component: {fileID: 3236685948976925631}
+  - component: {fileID: 9650075460373287}
   m_Layer: 5
   m_Name: CharacterSheet
   m_TagString: Untagged
@@ -1442,7 +1443,7 @@ RectTransform:
   m_GameObject: {fileID: 5754424780267088289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5889720185130479152}
@@ -1532,6 +1533,29 @@ MonoBehaviour:
   - {fileID: 5322941215146121474}
   - {fileID: 8985676597643543890}
   - {fileID: 8685424969486212832}
+--- !u!223 &9650075460373287
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754424780267088289}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: -731980243
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &6417736903174237810
 GameObject:
   m_ObjectHideFlags: 0
