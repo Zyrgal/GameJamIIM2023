@@ -25,6 +25,7 @@ public class SheetData : MonoBehaviour
     public void DisplaySheet()
     {
         gameObject.SetActive(true);
+        AudioManager.Instance.PlaySound("Open_Sheet");
     }
 
     public void HideSheet()
