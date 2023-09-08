@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
-using UnityEditor;
 using UnityEngine;
 
 public class EmployeePosManager : MonoBehaviour
@@ -11,12 +10,12 @@ public class EmployeePosManager : MonoBehaviour
     [SerializeField] private int nbOfEmployeePos;
     [SerializeField] private float offsetFromLastPos;
     [SerializeField] private GameObject employeePosPrefab;
-    SerializedProperty m_OrderInLayer;
 
     [SerializeField] public List<Transform> employeePosList = new List<Transform>();
-    private List<EmployeeMovement> employeeList = new List<EmployeeMovement>();
+    public List<EmployeeMovement> employeeList = new List<EmployeeMovement>();
     private Vector3 offset;
     private int employeePosIndex = 0;
+    public Transform posAscensseur;
 
     private void Awake()
     {
@@ -57,7 +56,15 @@ public class EmployeePosManager : MonoBehaviour
     private IEnumerator MoveEmployeeCoroutine(int index)
     {
         yield return new WaitForSeconds(0.7f);
-        employeeList[index].MoveTo(employeePosList[index].position);
+
+        if (index > employeePosList.Count - 1)
+        {
+            employeeList[index].MoveTo(employeePosList[4].position);
+        }
+        else
+        {
+            employeeList[index].MoveTo(employeePosList[index].position);
+        }
     }
 
     private void UpdateEmployeesColor()
