@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
@@ -47,6 +48,21 @@ public class RulesScriptable : MonoBehaviour
 
     [SerializeField] List<TextMeshProUGUI> listRulesTMP = new List<TextMeshProUGUI>();
 
+    string mergedString = null;
+    string mergedString2 = null;
+    string mergedString3 = null;
+    string savedMergedString_1_Rule_1 = null;
+    string savedMergedString_1_Rule_2 = null;
+    string savedMergedString_1_Rule_3 = null;
+
+    string savedMergedString_2_Rule_1 = null;
+    string savedMergedString_2_Rule_2 = null;
+    string savedMergedString_2_Rule_3 = null;
+
+    string savedMergedString_3_Rule_1 = null;
+    string savedMergedString_3_Rule_2 = null;
+    string savedMergedString_3_Rule_3 = null;
+
     public void Start()
     {
         List<List<EnumRule>> listSelected = new List<List<EnumRule>>();
@@ -74,48 +90,201 @@ public class RulesScriptable : MonoBehaviour
 
             string rule = null;
             string targetedThing = null;
-            string mergedString = null;
+
+            #region SetRuleSheetVisual
             if (porte.enumRule.ToString() == "letter")
             {
                 rule = "FirstName or LastName must contains the letter => ";
                 targetedThing = porte.rule.letter;
-                mergedString = rule + targetedThing;
+                if (i >= 0 && i <= 2)
+                {
+                    mergedString = rule + targetedThing;
+                }
+                else if (i >= 3 && i <= 5)
+                {
+                    mergedString = null;
+                    mergedString2 = rule + targetedThing;
+                }
+                else if (i >= 6 && i <= 8)
+                {
+                    mergedString = null;
+                    mergedString2 = null;
+                    mergedString3 = rule + targetedThing;
+                }
             }
             else if(porte.enumRule.ToString() == "word")
             {
                 rule = "Description must contains the word => ";
                 targetedThing = porte.rule.word;
-                mergedString = rule + targetedThing;
+                if (i >= 0 && i <= 2)
+                {
+                    mergedString = rule + targetedThing;
+                }
+                else if (i >= 3 && i <= 5)
+                {
+                    mergedString = null;
+                    mergedString2 = rule + targetedThing;
+                }
+                else if (i >= 6 && i <= 8)
+                {
+                    mergedString = null;
+                    mergedString2 = null;
+                    mergedString3 = rule + targetedThing;
+                }
             }
             else if (porte.enumRule.ToString() == "entrepriseName")
             {
                 rule = "Service must be => ";
                 targetedThing = porte.rule.entrepriseName;
-                mergedString = rule + targetedThing;
+                if (i >= 0 && i <= 2)
+                {
+                    mergedString = rule + targetedThing;
+                }
+                else if (i >= 3 && i <= 5)
+                {
+                    mergedString = null;
+                    mergedString2 = rule + targetedThing;
+                }
+                else if (i >= 6 && i <= 8)
+                {
+                    mergedString = null;
+                    mergedString2 = null;
+                    mergedString3 = rule + targetedThing;
+                }
             }
             else if (porte.enumRule.ToString() == "employeeCloth")
             {
                 rule = "The employee must wear => ";
                 targetedThing = porte.rule.employeeClothing;
-                mergedString = rule + targetedThing;
+                if (i >= 0 && i <= 2)
+                {
+                    mergedString = rule + targetedThing;
+                }
+                else if (i >= 3 && i <= 5)
+                {
+                    mergedString = null;
+                    mergedString2 = rule + targetedThing;
+                }
+                else if (i >= 6 && i <= 8)
+                {
+                    mergedString = null;
+                    mergedString2 = null;
+                    mergedString3 = rule + targetedThing;
+                }
             }
             else if (porte.enumRule.ToString() == "employeeAccessory")
             {
                 rule = "The employee must wear => ";
                 targetedThing = porte.rule.employeeAccesory;
-                mergedString = rule + targetedThing;
+                if (i >= 0 && i <= 2)
+                {
+                    mergedString = rule + targetedThing;
+                }
+                else if (i >= 3 && i <= 5)
+                {
+                    mergedString = null;
+                    mergedString2 = rule + targetedThing;
+                }
+                else if (i >= 6 && i <= 8)
+                {
+                    mergedString = null;
+                    mergedString2 = null;
+                    mergedString3 = rule + targetedThing;
+                }
             }
 
-            listRulesTMP[i].text = "Rule to acces stage " + porte.id + ": " + mergedString;
+            if (i == 0)
+            {
+                savedMergedString_1_Rule_1 = mergedString;
+                /*Debug.Log("1st = str 1 " + mergedString);
+                Debug.Log("1st = str 2 " + mergedString2);
+                Debug.Log("1st = str 3 " + mergedString3);*/
+            }
+            else if (i == 1)
+            {
+                savedMergedString_1_Rule_2 = mergedString;
+            }
+            else if (i == 2)
+            {
+                savedMergedString_1_Rule_3 = mergedString;
+            }
+            else if (i == 3)
+            {
+                savedMergedString_2_Rule_1 = mergedString2;
+            }
+            else if (i == 4)
+            {
+                savedMergedString_2_Rule_2 = mergedString2;
+            }
+            else if (i == 5)
+            {
+                savedMergedString_2_Rule_3 = mergedString2;
+            }
+            else if (i == 6)
+            {
+                savedMergedString_3_Rule_1 = mergedString3;
+            }
+            else if (i == 7) 
+            {
+                savedMergedString_3_Rule_2 = mergedString3;
+            }
+            else if (i == 8)
+            {
+                savedMergedString_3_Rule_3 = mergedString3;
+            }
+
+            if (i % doorCount == 0)
+            {
+                if (savedMergedString_3_Rule_1 != null)
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " and " + savedMergedString_2_Rule_1 + " and " + savedMergedString_3_Rule_1;
+                }
+                else if (savedMergedString_2_Rule_1 != null)
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " and " + savedMergedString_2_Rule_1;
+                }
+                else
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1;
+                }
+            }
+            else if (i % doorCount == 1)
+            {
+                if (savedMergedString_3_Rule_2 != null)
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " and " + savedMergedString_2_Rule_2 + " and " + savedMergedString_3_Rule_2;
+                }
+                else if (savedMergedString_2_Rule_2 != null)
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " and " + savedMergedString_2_Rule_2;
+                }
+                else
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2;
+                }
+            }
+            else if (i % doorCount == 2)
+            {
+                if (savedMergedString_3_Rule_3 != null)
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " and " + savedMergedString_2_Rule_3 + " and " + savedMergedString_3_Rule_3;
+                }
+                else if (savedMergedString_2_Rule_3 != null)
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " and " + savedMergedString_2_Rule_3;
+                }
+                else
+                {
+                    listRulesTMP[i % doorCount].text = "Rule to acces stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3;
+                }
+            }
+            #endregion
+
             rulesList.Add(porte);
         }
 
         rulesList.Sort((a, b) => a.id - b.id);
 
-        /*for (int i = 0; i < employeeNbrToSpawn; i++)
-        {
-            StartCoroutine(SpawnEmployee(employeeNbrToSpawn));
-        }*/
         savedSpawnTimer = spawnTimer;
         spawnTimer = 0;
         StartCoroutine(SpawnEmployee());
@@ -336,7 +505,6 @@ public class RulesScriptable : MonoBehaviour
         int random = UnityEngine.Random.Range(0, DataList.instance.EntrepriseNameList.Count);
         string choosen = DataList.instance.EntrepriseNameList[random];
         DataList.instance.EntrepriseNameList.Remove(choosen);
-        Debug.Log("Entreprise Choosen = " + choosen);
         rule.entrepriseName = choosen;
     }
 
