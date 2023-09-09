@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &37859442
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3398993970840026321, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_Name
+      value: ScoreManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.030173719
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.78002816
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 288.80374
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150270834399926916, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 290d8d12ac1e05d468b8586ccee6a835, type: 3}
 --- !u!1001 &174857417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1025,106 +1082,6 @@ PrefabInstance:
       propertyPath: rulesScriptable
       value: 
       objectReference: {fileID: 1385797334}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.size
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: ddc187b93b3764f4db4e3adc07f9223a, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1bb03dfea9d68994a9264233c4d30d76, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 0a052957a51081141bd684f7e85f7eb3, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[3]
-      value: 
-      objectReference: {fileID: 21300000, guid: 3dc8bce3764aadf48b46945cb5e75f60, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 1daee2c7aa3a3d54cbc4542aeb2d480f, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: dc3e27b47ea19574bae48d5f8a85d824, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7c13c3163210880469fc9ecbac09fbc9, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[7]
-      value: 
-      objectReference: {fileID: 21300000, guid: cea2356a692d66747bcb5cdf537e6639, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[8]
-      value: 
-      objectReference: {fileID: 21300000, guid: e6c6e45373da39340b1d71c9b5435842, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[9]
-      value: 
-      objectReference: {fileID: 21300000, guid: 15f56e7b17684be4eb54b56a6d3ac436, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[10]
-      value: 
-      objectReference: {fileID: 21300000, guid: 87b9a974792bfda4bba982c117c78d42, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[11]
-      value: 
-      objectReference: {fileID: 21300000, guid: e26c1bf7f56a2db4cb4bacd5d7f915c8, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[12]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5afec23ba085e854498be3a5a4fc994b, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[13]
-      value: 
-      objectReference: {fileID: 21300000, guid: b79d3c88f1c91024195e0ba491225df4, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[14]
-      value: 
-      objectReference: {fileID: 21300000, guid: aa5726fe5ced3e14297335c0f8f9c023, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[15]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5276e25d89969c64e862c4ae6beb6b09, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[16]
-      value: 
-      objectReference: {fileID: 21300000, guid: 6a803c39482ba384b863f4615c4a2338, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[17]
-      value: 
-      objectReference: {fileID: 21300000, guid: ad8802e1d991f3c438576ba2027e0e48, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[18]
-      value: 
-      objectReference: {fileID: 21300000, guid: e5a5b7ee04d59264ab4b77c4368e3c2b, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[19]
-      value: 
-      objectReference: {fileID: 21300000, guid: 2d87aa3434b65c84fa91b83d0f2f9561, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[20]
-      value: 
-      objectReference: {fileID: 21300000, guid: e36fb4a2dcecec246b16c7eca94888d9, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[21]
-      value: 
-      objectReference: {fileID: 21300000, guid: f55bd5d3d65b0d447a6f454d5b4048f7, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[22]
-      value: 
-      objectReference: {fileID: 21300000, guid: 306412b1331fbd24196b45c886973d1c, type: 3}
-    - target: {fileID: 6712686084439038545, guid: 3a7c1e6fff0ef6948905812bdf02a131, type: 3}
-      propertyPath: pictoSprites.Array.data[23]
-      value: 
-      objectReference: {fileID: 21300000, guid: 8b0f85c1d9d4ad340a8303a743864d6a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3310,3 +3267,4 @@ SceneRoots:
   - {fileID: 1315387114}
   - {fileID: 1284280591}
   - {fileID: 406377149}
+  - {fileID: 37859442}

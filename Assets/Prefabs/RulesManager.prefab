@@ -76,16 +76,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sheetPrefab: {fileID: 5754424780267088289, guid: d4297b02b50501d4fac5b56a371f6f95, type: 3}
   rulesList: []
-  employeeNbrToSpawn: 2
+  employeeNbrToSpawn: 30
+  spawnTimer: 8
+  spawnedEmployeeCount: 0
   employeeToSpawn: {fileID: 8769112723986162978, guid: 308e36f3bd402aa4dbd38bd561a72cbc, type: 3}
   employeeList: []
-  doorCount: 3
   rulesCount: 3
-  spawnedEmployeeCount: 0
   canvas: {fileID: 0}
   spawnPointSheet: {fileID: 0}
-  spawnTimer: 0
-  savedSpawnTimer: 0
   listRulesTMP:
   - {fileID: 0}
   - {fileID: 0}
