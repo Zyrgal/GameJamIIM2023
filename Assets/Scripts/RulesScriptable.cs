@@ -236,45 +236,45 @@ public class RulesScriptable : MonoBehaviour
             {
                 if (savedMergedString_3_Rule_1 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " et " + savedMergedString_2_Rule_1 + " et " + savedMergedString_3_Rule_1;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " et " + savedMergedString_2_Rule_1 + " et " + savedMergedString_3_Rule_1;
                 }
                 else if (savedMergedString_2_Rule_1 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " et " + savedMergedString_2_Rule_1;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1 + " et " + savedMergedString_2_Rule_1;
                 }
                 else
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_1;
                 }
             }
             else if (i % doorCount == 1)
             {
                 if (savedMergedString_3_Rule_2 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " et " + savedMergedString_2_Rule_2 + " et " + savedMergedString_3_Rule_2;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " et " + savedMergedString_2_Rule_2 + " et " + savedMergedString_3_Rule_2;
                 }
                 else if (savedMergedString_2_Rule_2 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " et " + savedMergedString_2_Rule_2;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2 + " et " + savedMergedString_2_Rule_2;
                 }
                 else
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_2;
                 }
             }
             else if (i % doorCount == 2)
             {
                 if (savedMergedString_3_Rule_3 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " et " + savedMergedString_2_Rule_3 + " et " + savedMergedString_3_Rule_3;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " et " + savedMergedString_2_Rule_3 + " et " + savedMergedString_3_Rule_3;
                 }
                 else if (savedMergedString_2_Rule_3 != null)
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " et " + savedMergedString_2_Rule_3;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3 + " et " + savedMergedString_2_Rule_3;
                 }
                 else
                 {
-                    listRulesTMP[i % doorCount].text = "Stage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3;
+                    listRulesTMP[i % doorCount].text = "Etage " + (porte.id + 1) + ": " + savedMergedString_1_Rule_3;
                 }
             }
             #endregion
